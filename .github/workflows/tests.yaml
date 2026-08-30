@@ -5,11 +5,14 @@ on: pull_request
 jobs:
   jest:
     name: Jest Ubuntu
-    rund-on: Ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
-      - uses: actions/setup-node@v6
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
         with:
-          node-version: "lts/Krypton"
+          node-version: "lts/hydrogen"
+
       - run: npm ci
+
       - run: npm test
