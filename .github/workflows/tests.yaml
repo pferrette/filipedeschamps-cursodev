@@ -7,12 +7,9 @@ jobs:
     name: Jest Ubuntu
     rund-on: Ubuntu-latest
     steps:
-      - uses: actions:checkout@v4
-
-      - uses: actions:setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v6
         with:
-          node-verson: "20.12.1"
-
+          node-version: "lts/Krypton"
       - run: npm ci
-
       - run: npm test
